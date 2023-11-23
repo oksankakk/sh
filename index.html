@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=«utf-8»>
+		<title>Вебпрограмування</title>
+		<style>
+			body {
+			background: #c7b39b
+			url(images/bg.jpg); /* Колір фону і шлях до файла */
+			color: #fff; /* Колір тексту */
+			
+			}
+			img{ width:50%;
+			}
+		</style>
+		<script>
+		
+		    var photosCount = 3;
+			var currentPhotoIndex = 1;
+			function showNextPhoto() {
+			    currentPhotoIndex++;
+				if(currentPhotoIndex > photosCount) currentPhotoIndex = 1;
+				
+				
+				
+				var elem = document.getElementById("currentPhoto");
+				elem.src = "images/photo" + currentPhotoIndex + ".jpg";
+			}
+			function addNextPhoto() {
+			    var newImage = document.createElement("img");
+				
+				
+			    currentPhotoIndex++;
+				if(currentPhotoIndex > photosCount) currentPhotoIndex = 1;
+				
+				newImage.src = "images/photo" + currentPhotoIndex + ".jpg";
+				
+				
+			   var containerElem = document.getElementById("gallery");
+				containerElem.appendChild(newImage);
+			}
+	    </script>
+	</head>
+	<body>
+	    <div id="gallery">
+			<img id="currentPhoto" src="images/photo1.jpg" width=50%>
+		    
+		<div>
+		<button onclick="showNextPhoto()">Наступне</button>
+		<button onclick="addNextPhoto()">Додати фото</button>
+	</body>
+</html>
